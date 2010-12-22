@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 
 =begin
  Copyright (c) 2010 David Andersen | davidx.org | davidx at davidx.org
