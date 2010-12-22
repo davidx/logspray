@@ -35,7 +35,6 @@ Choice.options do
     short '-h'
     long '--host=HOST'
     desc 'The hostname or ip of the amqp server (required)'
-    default '10.10.10.100'
   end
 
   option :queue,:required =>true do
