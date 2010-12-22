@@ -1,0 +1,18 @@
+apache amqp message bus based logger.
+
+Put the following in your apache config:
+
+
+CustomLog "|/usr/local/logspray/bin/apache_netlogger.rb --host=myamqploghost --queue=apache_access_log" combined
+ErrorLog "|/usr/local/logspray/bin/apache_netlogger.rb --host=myamqploghost --queue=apache_error_log"
+
+
+
+on your logserver:
+
+
+add this cronjob:
+
+
+* * * * *       ruby /usr/local/logspray/bin/consume_apache_netlogger.rb --host=myamqploghost --queue=apache_access_log
+* * * * *       ruby /usr/local/logspray/bin/consume_apache_netlogger.rb --host=myamqploghost --queue=apache_error_log
