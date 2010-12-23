@@ -31,9 +31,17 @@ ErrorLog "|/data/logspray/current/bin/logspray.rb --host=myamqploghost --queue=a
 # Dependency: 
 - Setup a rabbitmq or amqp compliant server on 'myamqploghost'
 
-<code> ubuntu: apt-get install rabbitmq-server && update-rc add rabbitmq-server && /etc/init.d/rabbitmq-server start </code>
+_ubuntu_: <pre> 
+	apt-get install rabbitmq-server && 
+	update-rc add rabbitmq-server && 
+	/etc/init.d/rabbitmq-server start 
+	</pre>
 
-<code> gentoo: emerge rabbitmq && rc-update add rabbitmq default && /etc/init.d/rabbitmq start </code>
+_gentoo_: <pre>
+	emerge rabbitmq && 
+	rc-update add rabbitmq default && 
+	/etc/init.d/rabbitmq start 
+	</pre>
 
 
 
