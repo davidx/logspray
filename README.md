@@ -1,19 +1,24 @@
-<pre> 
+
+## Install:
+<pre> mkdir -p /data/ops && \
+cd /data/ops && \
+git clone https://github.com:davidx/logspray.git
+</pre>
+
+<pre> cd /data/ops/logspray
 gem install bundler && bundle install 
 </pre>
 - Setup a rabbitmq or amqp compliant server on 'myamqploghost'
 
 #### Gentoo:
 
-<pre> 
-emerge rabbitmq && 
+<pre> emerge rabbitmq && 
 rc-update add rabbitmq default && 
 /etc/init.d/rabbitmq start 
 </pre>
 
 ####Ubuntu:
-<pre> 
-apt-get install rabbitmq-server &&
+<pre> apt-get install rabbitmq-server &&
 update-rc add rabbitmq-server && 
 /etc/init.d/rabbitmq-server start
 </pre>
