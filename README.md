@@ -33,14 +33,9 @@ ErrorLog "|/data/logspray/current/bin/logspray.rb --host=myamqploghost --queue=a
 - Setup a rabbitmq or amqp compliant server on 'myamqploghost'
 
 - Gentoo:
-<pre>
-emerge rabbitmq &&  rc-update add rabbitmq default && /etc/init.d/rabbitmq start 
-</pre>
+<pre>emerge rabbitmq &&  rc-update add rabbitmq default && /etc/init.d/rabbitmq start</pre>
 - Ubuntu:
-<pre> 
-apt-get install rabbitmq-server && update-rc add rabbitmq-server && /etc/init.d/rabbitmq-server start 
-</pre>
-
+<pre>apt-get install rabbitmq-server && update-rc add rabbitmq-server && /etc/init.d/rabbitmq-server start</pre>
 
 ### Log persistence: 
 - Add this cronjob on your central log storage server:
