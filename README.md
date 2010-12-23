@@ -6,32 +6,27 @@ Created out of the need for a simple network based logger for Apache, can be use
 
 Standard log entry:
 
-<code>
+<pre>
 LogLevel debug
-
 ErrorLog "/var/log/apache/error/error.log"
-
 CustomLog "/var/log/apache/access/access.log" combined
-
-</code>
+</pre>
 
 This is better but still requires compression and cleanup on each cluster server. Not ideal if you want aggregrate log flow transparancy.
 
-<code>
+<pre>
 LogLevel debug
-
 ErrorLog "|/usr/sbin/cronolog /var/log/apache/error/%Y%m%d-error.log"
-
 CustomLog "|/usr/sbin/cronolog /var/log/apache/access/%Y%m%d-access.log" combined
-</code>
+</pre>
 
 This sends a message to an AMQP queue for each log entry, which can be replicated, persisted, normalized, consumed in various ways.
 
-<code>
+<pre>
 LogLevel debug
 CustomLog "|/data/logspray/current/bin/logspray.rb --host=myamqploghost --queue=apache_access_log" combined
 ErrorLog "|/data/logspray/current/bin/logspray.rb --host=myamqploghost --queue=apache_error_log"
-</code>
+</pre>
 
 # Dependency: 
 - Setup a rabbitmq or amqp compliant server on 'myamqploghost'
