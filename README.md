@@ -12,7 +12,7 @@ ErrorLog "/var/log/apache/error/error.log"
 CustomLog "/var/log/apache/access/access.log" combined
 </pre>
 
-This is better but still requires compression and cleanup on each cluster server. Not ideal if you want aggregrate log flow transparancy.
+This is better however still requires remote log management on each cluster server. Not ideal if you want aggregrate log flow transparancy.
 
 <pre>
 LogLevel debug
@@ -33,17 +33,13 @@ ErrorLog "|/data/logspray/current/bin/logspray.rb --host=myamqploghost --queue=a
 - Setup a rabbitmq or amqp compliant server on 'myamqploghost'
 
 - Gentoo:
-	<pre>
-	emerge rabbitmq && 
-	rc-update add rabbitmq default && 
-	/etc/init.d/rabbitmq start 
-	</pre>
+<pre>
+emerge rabbitmq &&  rc-update add rabbitmq default && /etc/init.d/rabbitmq start 
+</pre>
 - Ubuntu:
-	<pre> 
-	apt-get install rabbitmq-server && 
-	update-rc add rabbitmq-server && 
-	/etc/init.d/rabbitmq-server start 
-	</pre>
+<pre> 
+apt-get install rabbitmq-server && update-rc add rabbitmq-server && /etc/init.d/rabbitmq-server start 
+</pre>
 
 
 ### Log persistence: 
