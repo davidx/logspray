@@ -29,6 +29,7 @@ ErrorLog "|/data/logspray/current/bin/logspray.rb --host=myamqploghost --queue=a
 </pre>
 
 # Dependency: 
+- Install gems: <pre> gem install bundler && bundle install </pre>
 - Setup a rabbitmq or amqp compliant server on 'myamqploghost'
 
 _ubuntu_: <pre> 
