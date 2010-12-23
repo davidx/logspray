@@ -32,19 +32,19 @@ ErrorLog "|/data/logspray/current/bin/logspray.rb --host=myamqploghost --queue=a
 - Install gems: <pre> gem install bundler && bundle install </pre>
 - Setup a rabbitmq or amqp compliant server on 'myamqploghost'
 
--- ubuntu:
+- Gentoo:
+	<pre>
+	emerge rabbitmq && 
+	rc-update add rabbitmq default && 
+	/etc/init.d/rabbitmq start 
+	</pre>
+- Ubuntu:
 	<pre> 
 	apt-get install rabbitmq-server && 
 	update-rc add rabbitmq-server && 
 	/etc/init.d/rabbitmq-server start 
 	</pre>
 
--- gentoo:
-	<pre>
-	emerge rabbitmq && 
-	rc-update add rabbitmq default && 
-	/etc/init.d/rabbitmq start 
-	</pre>
 
 ### Log persistence: 
 - Add this cronjob on your central log storage server:
