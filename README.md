@@ -28,24 +28,23 @@ CustomLog "|/data/logspray/current/bin/logspray.rb --host=myamqploghost --queue=
 ErrorLog "|/data/logspray/current/bin/logspray.rb --host=myamqploghost --queue=apache_error_log"
 </pre>
 
-# Dependency: 
+### Dependency: 
 - Install gems: <pre> gem install bundler && bundle install </pre>
 - Setup a rabbitmq or amqp compliant server on 'myamqploghost'
 
-_ubuntu_: <pre> 
+-- ubuntu:
+	<pre> 
 	apt-get install rabbitmq-server && 
 	update-rc add rabbitmq-server && 
 	/etc/init.d/rabbitmq-server start 
 	</pre>
 
-_gentoo_: <pre>
+-- gentoo:
+	<pre>
 	emerge rabbitmq && 
 	rc-update add rabbitmq default && 
 	/etc/init.d/rabbitmq start 
 	</pre>
-
-
-
 
 ## Add this cronjob on your central log storage server:
 
