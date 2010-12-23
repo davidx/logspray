@@ -46,8 +46,8 @@ _gentoo_: <pre>
 
 
 
-add this cronjob on your log server:
+## Add this cronjob on your central log storage server:
 
 
-* * * * *       ruby /usr/local/logspray/bin/consume_logspray_queue.rb --host=myamqploghost --queue=apache_access_log
-* * * * *       ruby /usr/local/logspray/bin/consume_logspray_queue.rb --host=myamqploghost --queue=apache_error_log
+<pre>* * * * * ruby /usr/local/logspray/bin/consume_logspray_queue.rb --host=myamqploghost --queue=apache_access_log
+* * * * * ruby /usr/local/logspray/bin/consume_logspray_queue.rb --host=myamqploghost --queue=apache_error_log</pre>
