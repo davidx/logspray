@@ -1,13 +1,9 @@
-
 ## Install:
-<pre> mkdir -p /data/ops && \
-cd /data/ops && \
-git clone https://github.com:davidx/logspray.git
-</pre>
+<pre> mkdir -p /data/ops </pre>
+<pre>cd /data/ops && git clone https://github.com:davidx/logspray.git</pre>
 
-<pre> cd /data/ops/logspray
-gem install bundler && bundle install 
-</pre>
+<pre> cd /data/ops/logspray && gem install bundler && bundle install </pre>
+
 - Setup a rabbitmq or amqp compliant server on 'myamqploghost'
 
 #### Gentoo:
