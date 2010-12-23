@@ -46,8 +46,8 @@ ErrorLog "|/data/logspray/current/bin/logspray.rb --host=myamqploghost --queue=a
 	/etc/init.d/rabbitmq start 
 	</pre>
 
-## Add this cronjob on your central log storage server:
-
+### Log persistence: 
+- Add this cronjob on your central log storage server:
 
 <pre>* * * * * ruby /usr/local/logspray/bin/consume_logspray_queue.rb --host=myamqploghost --queue=apache_access_log
 * * * * * ruby /usr/local/logspray/bin/consume_logspray_queue.rb --host=myamqploghost --queue=apache_error_log</pre>
