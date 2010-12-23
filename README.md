@@ -49,5 +49,5 @@ ErrorLog "|/data/logspray/current/bin/logspray.rb --host=myamqploghost --queue=a
 ### Log persistence: 
 - Add this cronjob on your central log storage server:
 
-<pre>* * * * * ruby /usr/local/logspray/bin/consume_logspray_queue.rb --host=myamqploghost --queue=apache_access_log
-* * * * * ruby /usr/local/logspray/bin/consume_logspray_queue.rb --host=myamqploghost --queue=apache_error_log</pre>
+<pre>* * * * * ruby /usr/local/logspray/bin/consume_logspray_queue.rb --host=myamqploghost --queue=apache_access_log --logfile=/var/log/logspray/apache_access_log/apache_access_log_`date +%Y%m%d`.log
+* * * * * ruby /usr/local/logspray/bin/consume_logspray_queue.rb --host=myamqploghost --queue=apache_error_log --logfile=/var/log/logspray/apache_error_log/apache_error_log_`date +%Y%m%d`.log</pre>
