@@ -8,15 +8,20 @@ Standard log entry:
 
 <code>
 LogLevel debug
+
 ErrorLog "/var/log/apache/error/error.log"
+
 CustomLog "/var/log/apache/access/access.log" combined
+
 </code>
 
 This is better but still requires compression and cleanup on each cluster server. Not ideal if you want aggregrate log flow transparancy.
 
 <code>
 LogLevel debug
+
 ErrorLog "|/usr/sbin/cronolog /var/log/apache/error/%Y%m%d-error.log"
+
 CustomLog "|/usr/sbin/cronolog /var/log/apache/access/%Y%m%d-access.log" combined
 </code>
 
