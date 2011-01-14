@@ -1,8 +1,9 @@
-## Install:
-<pre>mkdir -p /data/ops/current </pre>
-<pre>git clone https://github.com:davidx/logspray.git /data/ops/current/logspray</pre>
+## Install: 
+<pre>gem install logspray (gem build in progress)</pre>
+currently:
+<pre>git clone https://github.com:davidx/logspray.git </pre>
 
-<pre>cd /data/ops/current/logspray && gem install bundler && bundle install </pre>
+<pre>cd logspray && gem install bundler && bundle install </pre>
 
 - Setup a rabbitmq or amqp compliant server on 'myamqploghost'
 
@@ -10,10 +11,10 @@
 
 <pre>emerge rabbitmq && rc-update add rabbitmq default && /etc/init.d/rabbitmq start </pre>
 
-####Ubuntu:
+#### Ubuntu:
 <pre>apt-get install rabbitmq-server && update-rc add rabbitmq-server && /etc/init.d/rabbitmq-server start </pre>
 
-### Log persistence:
+### Log persistence example:
 - Add this cronjob on your central log storage server:
 
 <pre>
